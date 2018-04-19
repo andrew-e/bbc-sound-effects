@@ -11,8 +11,6 @@
   },
   "author": "Andrew",
   "dependencies": {
-    "request-promise-native": "1.0.3",
-    "request": "2.34",
     "csv-parse": "2.2.0",
     "sync-request": "6.0.0"
   }

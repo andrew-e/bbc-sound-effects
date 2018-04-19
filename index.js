@@ -1,14 +1,9 @@
-const request = require('request-promise-native');
 const syncRequest = require('sync-request');
 const parse = require('csv-parse/lib/sync');
-const http = require('http');
 const fs = require('fs');
 
 const lastDownloadedFile = 'sounds/lastFileDownloaded.txt';
 const soundEffectCSV = fs.readFileSync('BBCSoundEffects.csv', 'utf8');
-
-let samples = parse(soundEffectCSV, {columns: true});
-const lastDownloaded = fs.readFileSync(lastDownloadedFile, 'utf8');
 
 return downloadStuff()
 .catch(err => {
@@ -16,15 +11,10 @@ return downloadStuff()
 });
 
 function downloadStuff() {
-    return new Promise(resolve => resolve())
-    .then(() => {
-        return soundEffectCSV;
-    })
+    return new Promise(resolve => resolve(soundEffectCSV))
     .then(soundEffectCSV => {
         let samples = parse(soundEffectCSV, {columns: true});
         const lastDownloaded = fs.readFileSync(lastDownloadedFile, 'utf8');
-
-        console.log('last = ' + lastDownloaded);
 
         if (lastDownloaded) {
             let slicePoint = 0;
@@ -61,6 +51,7 @@ function retry(maxRetries, fn) {
         if (maxRetries <= 0) {
             throw err;
         }
+
         console.log(`${maxRetries} retries left`);
         return retry(maxRetries - 1, fn);
     });
