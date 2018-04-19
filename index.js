@@ -31,7 +31,7 @@ return request({
 
     samples.forEach(sample => {
         const description = sample.description.replace(/[/\\?%*:|"<>.]/g, '');
-        const filename = `sounds/${description}.wav`;
+        const filename = `sounds/${description}${sample.location}`;
 
         console.log(`downloading then saving ${filename}`);
 
