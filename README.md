@@ -14,7 +14,7 @@ You can run this script multiple times, and it will start where it left off!  Yo
 1. Installing Node: Before you are able to run this script, you need to be able to run the code.  To do that please follow the instructions here: https://nodejs.org/en/download/
 2. Download files: Click on the green `Clone or Download` that appears at the top right of this very page!  Then click the `Download zip` button.
 3. Unzip the contents and put in your favourite folder
-4. Open the command line and change the directory to the one in step 2.
+4. Open the command line and change the directory to the one in step 3.
 5. Run `npm install`.  This installs other dependencies in which this code needs to run
 6. Run `node index.js`
 
@@ -22,6 +22,6 @@ This should start the process of downloading the wav files into the `sounds` dir
 a. Seeing if files are showing up in `sounds`  
 b. messages about which file is being downloaded and saved shows up on the command line
 
-If by any chance, the process crashes or stops, you can re-run the program in step 5 and it should pick up where it left off.
+If by any chance, the process crashes or stops, you can re-run the program in step 6 and it should pick up where it left off.
 
 If you need to stop the program for whatever reason, you can press `crtl+c` in the command line.
