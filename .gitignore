@@ -1,3 +1,6 @@
+sounds/
+sounds/lastFileDownloaded.txt
+
 # Logs
 logs
 *.log
