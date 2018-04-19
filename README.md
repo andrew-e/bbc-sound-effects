@@ -1,3 +1,5 @@
+Warning: this is a hacky solution I made over lunch time at work. There is almostl certainly bugs, and you will not learn from looking at this code.
+
 # What does it do?
 
 This downloads the BBC Sounds Effects library one wav file at a time.
@@ -6,8 +8,9 @@ You can run this script multiple times, and it will start where it left off!  Yo
 
 ## Disclaimer: 
 
-1. This shouldn't be parallelized cause the BBC wouldn't be very happy if we did.  I'm not sure they would be happy with this existing at all.
-2. The 'picking up where you left off' functionality is dependant on the BBCSoundEffects.csv not changing.  If that csv changes order (or structure) this will do strange things.
+1. If you only want a subset of the files, please go through BBCSoundEffects.csv and remove any row of a sound you aren't interested in.  This would be beneficial to both you and the BBC.
+2. This shouldn't be parallelized cause the BBC wouldn't be very happy if we did.  I'm not sure they would be happy with this existing at all.
+3. The 'picking up where you left off' functionality is dependant on the BBCSoundEffects.csv not changing.  If that csv changes order (or structure) this will do strange things.
 
 ## Instructions:
 
@@ -22,6 +25,6 @@ This should start the process of downloading the wav files into the `sounds` dir
 a. Seeing if files are showing up in `sounds`  
 b. messages about which file is being downloaded and saved shows up on the command line
 
-If by any chance, the process crashes or stops, you can re-run the program in step 6 and it should pick up where it left off.
+If by any chance, the process crashes or stops, you can re-run the program in step 6 and it should pick up where it left off.  I have added some retry logic around this, cause the socket timeout errors seem to happen fairly regularly (for me)
 
 If you need to stop the program for whatever reason, you can press `crtl+c` in the command line.
